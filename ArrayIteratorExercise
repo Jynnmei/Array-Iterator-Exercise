@@ -1,0 +1,74 @@
+Exercise 1: Array.prototype.filter()
+const veryOldInventors = inventors.filter(
+  (inventor) => inventor.year > 1500 && inventor.year < 1600);
+console.log(veryOldInventors);
+
+
+Exercise 2: Array.prototype.map()
+const inventorNames = inventors.map((inventor) => {
+  return { first: inventor.first, last: inventor.last };
+});
+console.log(inventorNames);
+
+
+Exercise 3: Array.prototype.sort()
+const sortedByBirthYear = inventors.sort((a, b) => a.year - b.year);
+
+console.log(sortedByBirthYear);
+
+
+Exercise 4: Array.prototype.find()
+const inventorNamedAda = inventors.find((name) => {
+  return name.first === "Ada";
+});
+
+console.log(inventorNamedAda);
+
+
+Exercise 5: Array.prototype.map()
+const firstLast = people.map((Names) => Names.split(" ").reverse());
+
+console.log(firstLast);
+
+
+Exercise 6: Array.prototype.some()
+const currentYear = new Date().getFullYear();
+const isAdultPresent = devs.some((person) => currentYear - person.year >= 18);
+
+console.log(isAdultPresent);
+
+
+Exercise 7: Array.prototype.every()
+const isEveryone19OrOlder = devs.every((person) => currentYear - person.year >= 19);
+
+console.log(isEveryone19OrOlder);
+
+
+Exercise 8: Array.prototype.find()
+const commentById = comments.find((comment) => comment.id === 823423);
+
+console.log(commentById);
+
+
+Exercise 9: Array.prototype.findIndex()
+const idx = comments.findIndex((comment) => comment.id === 123523);
+
+console.log(idx);
+
+
+Level Up exercise 1
+const totalYearsLived = inventors.reduce((total, inventor) => {
+  const lifespan = inventor.passed - inventor.year;
+  return total + lifespan;
+}, 0);
+
+console.log(totalYearsLived);
+
+
+Level Up exercise 2
+const travelMethodCounts = travelMethods.reduce((accumulator, transport) => {
+  accumulator[transport] = (accumulator[transport] || 0) + 1;
+  return accumulator;
+}, {});
+
+console.log(travelMethodCounts);
